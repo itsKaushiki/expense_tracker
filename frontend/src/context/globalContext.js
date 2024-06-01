@@ -43,7 +43,7 @@ const totalIncome = () => {
 
     //calculate expenses
     const addExpense = async (income) => {
-        const response = await axios.post(`${BASE_URL}add-expense`, income)
+        const response = await axios.post(`${https://expense-tracker-nu-seven.vercel.app/}add-expense`, income)
             .catch((err) =>{
                 setError(err.response.data.message)
             })
@@ -51,13 +51,13 @@ const totalIncome = () => {
     }
 
     const getExpenses = async () => {
-        const response = await axios.get(`${BASE_URL}get-expenses`)
+        const response = await axios.get(`${https://expense-tracker-nu-seven.vercel.app/}get-expenses`)
         setExpenses(response.data)
         console.log(response.data)
     }
 
     const deleteExpense = async (id) => {
-        const res  = await axios.delete(`${BASE_URL}delete-expense/${id}`)
+        const res  = await axios.delete(`${https://expense-tracker-nu-seven.vercel.app/}delete-expense/${id}`)
         getExpenses()
     }
 
