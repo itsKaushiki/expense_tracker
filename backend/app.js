@@ -7,7 +7,7 @@ require ('dotenv').config()
 
 app.use(cors(
     {
-        origin: ["https://expense-tracker-334h.vercel.app"],
+        origin: ["https://expense-tracker-334h.vercel.app/"],
         methods : ["POST" , "GET"],
         credentials: true
     }
