@@ -5,6 +5,13 @@ const {readdirSync} = require('fs')
 const app = express()
 require ('dotenv').config()
 
+app.use(cors(
+    {
+        origin: ["https://expense-tracker-334h.vercel.app/"],
+        methods : ["POST" , "GET"],
+        credentials: true
+    }
+))
 const PORT = process.env.PORT
 
 //middlewares
