@@ -11,7 +11,7 @@ export const GlobalProvider = ({children}) =>{
 
   //calculate incomes
   const addIncome = async (income) => {
-    const response = await axios.post(`${BASE_URL}add-income`, income)
+    const response = await axios.post(`${https://expense-tracker-nu-seven.vercel.app/}add-income`, income)
         .catch((err) =>{
             setError(err.response.data.message)
         })
@@ -19,7 +19,7 @@ export const GlobalProvider = ({children}) =>{
 }
 
 const getIncomes = async () => {
-    const response = await axios.get(`${BASE_URL}get-incomes`)
+    const response = await axios.get(`${https://expense-tracker-nu-seven.vercel.app/L}get-incomes`)
     setIncomes(response.data)
     console.log(response.data)
 
