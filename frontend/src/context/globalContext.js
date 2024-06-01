@@ -1,6 +1,6 @@
 import React, {useState, useContext} from "react"
 import axios from 'axios'
-const BASE_URL = "http://localhost:5000/api/v1/";
+const BASE_URL = "https://expense-tracker-nu-seven.vercel.app/";
 
 const GlobalContext = React.createContext()
 
@@ -11,7 +11,7 @@ export const GlobalProvider = ({children}) =>{
 
   //calculate incomes
   const addIncome = async (income) => {
-    const response = await axios.post(`${https://expense-tracker-nu-seven.vercel.app/}add-income`, income)
+    const response = await axios.post(`${BASE_URL}add-income`, income)
         .catch((err) =>{
             setError(err.response.data.message)
         })
@@ -19,7 +19,7 @@ export const GlobalProvider = ({children}) =>{
 }
 
 const getIncomes = async () => {
-    const response = await axios.get(`${https://expense-tracker-nu-seven.vercel.app/L}get-incomes`)
+    const response = await axios.get(`${BASE_URL}get-incomes`)
     setIncomes(response.data)
     console.log(response.data)
 
@@ -43,7 +43,7 @@ const totalIncome = () => {
 
     //calculate expenses
     const addExpense = async (income) => {
-        const response = await axios.post(`${https://expense-tracker-nu-seven.vercel.app/}add-expense`, income)
+        const response = await axios.post(`${BASE_URL}add-expense`, income)
             .catch((err) =>{
                 setError(err.response.data.message)
             })
@@ -51,13 +51,13 @@ const totalIncome = () => {
     }
 
     const getExpenses = async () => {
-        const response = await axios.get(`${https://expense-tracker-nu-seven.vercel.app/}get-expenses`)
+        const response = await axios.get(`${BASE_URL}get-expenses`)
         setExpenses(response.data)
         console.log(response.data)
     }
 
     const deleteExpense = async (id) => {
-        const res  = await axios.delete(`${https://expense-tracker-nu-seven.vercel.app/}delete-expense/${id}`)
+        const res  = await axios.delete(`${BASE_URL}delete-expense/${id}`)
         getExpenses()
     }
 
